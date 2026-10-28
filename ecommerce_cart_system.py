@@ -104,7 +104,11 @@ def export_cart_receipt(filename: str = "receipt.txt") -> Path:
 
 def get_cart_summary(items: dict[str, dict[str, Any]]) -> int:
     """Return the total number of units across all positive-quantity items."""
-    return sum(details["qty"] for details in items.values() if details["qty"] > 0)
+    return sum(
+        details["qty"]
+        for details in items.values()
+        if details["qty"] > 0
+    )
 
 
 def main() -> None:

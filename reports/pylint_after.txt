@@ -1,0 +1,11 @@
+STATIC ANALYSIS REPORT — AFTER FIXES
+Status: NOT EXECUTED by the named analyzer in this environment.
+Reason: Pylint is not installed and package installation/network access is unavailable.
+This file is a transparent source-inspection inventory, NOT genuine Pylint output.
+To generate the genuine report locally:
+    python -m pip install pylint bandit flake8
+    pylint ecommerce_cart_system.py
+
+Expected outcome: source was rewritten with module/function docstrings, snake_case names,
+used imports only, explicit exceptions, no unused locals, and clearer function boundaries.
+Run locally to verify the required score (>9.5); no score is fabricated here.
