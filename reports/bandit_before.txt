@@ -1,0 +1,14 @@
+STATIC ANALYSIS REPORT — BASELINE
+Status: NOT EXECUTED by Bandit in this environment.
+Reason: Bandit is not installed and package installation/network access is unavailable.
+This file is a transparent source-inspection inventory, NOT genuine Bandit output.
+
+Security findings visible by inspection:
+- B307-style risk: eval(discount_expr) can execute arbitrary Python expressions.
+- Hard-coded live-looking gateway secret in main().
+- B324-style weak hash: MD5 used for item identifiers.
+- Insecure predictable checkout PIN: random.randint used for a security-sensitive PIN.
+- Shell command constructed from a filename and passed to os.system.
+- Receipt output filename is used directly without validation.
+Generate the genuine report locally with:
+    bandit -r ecommerce_cart_system.py

@@ -1,0 +1,19 @@
+STATIC ANALYSIS REPORT — BASELINE
+Status: NOT EXECUTED by the named analyzer in this environment.
+Reason: Pylint is not installed and package installation/network access is unavailable.
+This file is a transparent source-inspection inventory, NOT genuine Pylint output.
+To generate the genuine report locally:
+    python -m pip install pylint bandit flake8
+    pylint ecommerce_cart_system.py
+
+Likely Pylint findings from source inspection:
+- Missing module/function docstrings.
+- Invalid naming style (camelCase function names and single-letter variables).
+- Unused imports (math).
+- Unused local variable (handling_fee).
+- Global statement / global mutable state.
+- Broad exception handling and unnecessary else/return patterns.
+- Use of eval; potentially dangerous dynamic expression evaluation.
+- File handling should use a context manager.
+- Line-ending/indentation issues are visible in the supplied source.
+No Pylint score is claimed because Pylint could not be run.

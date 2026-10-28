@@ -1,0 +1,12 @@
+STATIC ANALYSIS REPORT — BASELINE
+Status: NOT EXECUTED by Flake8 in this environment.
+Reason: Flake8 is not installed and package installation/network access is unavailable.
+This file is a transparent source-inspection inventory, NOT genuine Flake8 output.
+
+Formatting/style issues visible by inspection:
+- Missing blank-line consistency around top-level definitions.
+- CamelCase function names.
+- Inconsistent indentation in the supplied file (notably try/else and local assignment lines).
+- Whitespace and line-length issues may be present.
+Generate the genuine report locally with:
+    flake8 ecommerce_cart_system.py
