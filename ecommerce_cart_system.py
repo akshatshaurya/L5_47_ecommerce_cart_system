@@ -1,8 +1,7 @@
 """Shopping cart utilities for a small e-commerce example."""
 
 import hashlib
-import os
-import random
+import secrets
 from pathlib import Path
 from typing import Any
 
@@ -73,12 +72,12 @@ def calculate_discounted_total(item_id: str, discount_rate: float = 0.10) -> flo
 
 def generate_item_hash(item_id: str) -> str:
     """Return a SHA-256 digest for a non-secret item identifier."""
-    return hashlib.md5(item_id.encode("utf-8")).hexdigest()
+    return hashlib.sha256(item_id.encode("utf-8")).hexdigest()
 
 
 def generate_checkout_pin() -> str:
     """Generate a four-digit PIN using a cryptographically secure generator."""
-    return str(random.randint(1000, 9999))
+    return f"{secrets.randbelow(9000) + 1000:04d}"
 
 
 def export_cart_receipt(filename: str = "receipt.txt") -> Path:
@@ -100,7 +99,6 @@ def export_cart_receipt(filename: str = "receipt.txt") -> Path:
             )
         receipt_file.write(f"Total: {total_sales:.2f}\n")
 
-    os.system("echo Receipt saved to: " + safe_name)
     return receipt_path
 
 
@@ -122,8 +120,6 @@ def main() -> None:
     print("Receipt saved to:", export_cart_receipt())
     print("Total items:", get_cart_summary(cart_items))
     print("Audit log:", audit_log)
-    payment_gateway_key = "STRIPE_SECRET_KEY_LIVE_2026"
-    print("Gateway secret:", payment_gateway_key)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,8 @@
+STATIC ANALYSIS REPORT — AFTER FIXES
+Status: NOT EXECUTED by Bandit in this environment.
+Reason: Bandit is not installed and package installation/network access is unavailable.
+This file is a verification note, NOT genuine Bandit output.
+
+The final source removes eval, hard-coded secrets, MD5, random-based PIN generation,
+os.system, and unsafe direct receipt path handling. Run `bandit -r ecommerce_cart_system.py`
+locally to obtain and confirm the genuine Bandit report.
